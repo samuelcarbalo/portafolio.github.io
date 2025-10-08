@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio | Samuel Reyes </title>
+    <style>
+        /* --- ESTILOS GENERALES --- */
+        :root {
+            --color-primario: #0d1117;
+            --color-secundario: #161b22;
+            --color-borde: #30363d;
+            --color-texto: #c9d1d9;
+            --color-texto-secundario: #8b949e;
+            --color-acento: #58a6ff;
+            --color-acento-hover: #1f6feb;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+            margin: 0;
+            background-color: var(--color-primario);
+            color: var(--color-texto);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            padding: 60px 0;
+            border-bottom: 1px solid var(--color-borde);
+        }
+
+        section:last-of-type {
+            border-bottom: none;
+        }
+
+        h1, h2, h3 {
+            color: var(--color-texto);
+            margin-top: 0;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 2.5em;
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--color-acento);
+        }
+
+        h3 {
+            font-size: 1.5em;
+        }
+
+        p {
+            font-size: 1.1em;
+            color: var(--color-texto-secundario);
+        }
+
+        a {
+            color: var(--color-acento);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--color-acento-hover);
+        }
+
+        strong {
+            color: var(--color-texto);
+        }
+
+        /* --- ENCABEZADO Y NAVEGACIÓN --- */
+        header {
+            background-color: var(--color-secundario);
+            padding: 15px 0;
+            border-bottom: 1px solid var(--color-borde);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        nav .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li a {
+            padding: 10px 15px;
+            font-weight: 500;
+        }
+
+
+        /* --- SECCIÓN DE INICIO (HERO) --- */
+        #inicio {
+            text-align: center;
+            padding: 80px 0;
+        }
+
+        #inicio h1 {
+            font-size: 3.5em;
+        }
+
+        #inicio .subtitulo {
+            font-size: 1.8em;
+            color: var(--color-acento);
+            margin-bottom: 20px;
+        }
+
+        .botones-inicio {
+            margin-top: 30px;
+        }
+
+        .btn {
+            background-color: var(--color-acento);
+            color: #ffffff;
+            padding: 12px 25px;
+            border-radius: 6px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin: 0 10px;
+            transition: background-color 0.3s ease;
+            border: none;
+        }
+
+        .btn:hover {
+            background-color: var(--color-acento-hover);
+            color: #ffffff;
+        }
+
+        .btn-secundario {
+            background-color: transparent;
+            border: 2px solid var(--color-acento);
+            color: var(--color-acento);
+        }
+        
+        .btn-secundario:hover {
+            background-color: var(--color-acento);
+            color: #ffffff;
+        }
+
+        /* --- SECCIÓN DE EXPERIENCIA Y PROYECTOS --- */
+        .card {
+            background-color: var(--color-secundario);
+            border: 1px solid var(--color-borde);
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .card ul {
+            padding-left: 20px;
+        }
+
+        .card li {
+            margin-bottom: 10px;
+            color: var(--color-texto-secundario);
+        }
+
+        .proyecto-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .proyecto-card .stack-tecnologico {
+            margin: 20px 0;
+            font-size: 0.9em;
+            font-weight: bold;
+            color: var(--color-texto-secundario);
+        }
+
+        /* --- SECCIÓN DE HABILIDADES --- */
+        .habilidades-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .habilidad-item {
+            background-color: var(--color-secundario);
+            color: var(--color-texto);
+            padding: 10px 20px;
+            border-radius: 20px;
+            border: 1px solid var(--color-borde);
+            font-size: 1em;
+        }
+
+        /* --- SECCIÓN DE CONTACTO Y FOOTER --- */
+        #contacto {
+            text-align: center;
+        }
+
+        .enlaces-contacto a {
+            margin: 0 15px;
+            font-size: 1.2em;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: var(--color-texto-secundario);
+            font-size: 0.9em;
+        }
+        
+        /* --- RESPONSIVE DESIGN --- */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5em; }
+            h2 { font-size: 2em; }
+            nav ul { display: none; } /* Opcional: Ocultar menú en móvil para simplicidad */
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="container">
+            <div class="logo"><a href="#">Samuel Reyes</a></div>
+            <ul>
+                <li><a href="#experiencia">Experiencia</a></li>
+                <!-- <li><a href="#proyectos">Proyectos</a></li> -->
+                <li><a href="#habilidades">Habilidades</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+
+        <section id="inicio">
+            <h1>Samuel Reyes </h1>
+            <p class="subtitulo">Software Developer | Full-Stack con Python y React.js</p>
+            <p>Apasionado por la creación de soluciones de software eficientes y escalables, <br> desde la interfaz de usuario hasta la infraestructura en la nube.</p>
+            <div class="botones-inicio">
+                <!-- <a href="#proyectos" class="btn">Ver mis Proyectos</a> -->
+                <a href="#contacto" class="btn btn-secundario">Contacto</a>
+            </div>
+        </section>
+
+        <section id="experiencia">
+            <h2>Experiencia Profesional</h2>
+            <div class="card">
+                <h3>Software Developer</h3>
+                <p><strong>nuevosmedios</strong> | Cali, Colombia | Febrero 2022 - agosto 2025</p>
+                <ul>
+                    <li>Desarrollé y mantuve APIs RESTful utilizando <strong>Python</strong> y el framework <strong>Flask</strong> para gestionar la lógica de negocio principal de la aplicación.</li>
+                    <li>Diseñé e implementé la arquitectura de la base de datos con <strong>Amazon DocumentDB (NoSQL)</strong>, optimizando las consultas para mejorar la escalabilidad.</li>
+                    <li>Colaboré en el front-end, construyendo componentes de interfaz de usuario dinámicos con <strong>React.js</strong> para mejorar la experiencia del usuario.</li>
+                    <li>Gestioné el ciclo de vida del despliegue de aplicaciones en <strong>AWS</strong>, utilizando servicios como <strong>Cloud9, Lambda, Dynamodb DocumentDB, Amplify</strong> y <strong>S3</strong> para almacenamiento de activos.</li>
+                    <li>Utilicé <strong>Codecommit que es el Git de AWS</strong> para el control de versiones en un entorno de equipo ágil, participando en revisiones de código para mantener la calidad del software.</li>
+                </ul>
+            </div>
+        </section>
+<!-- 
+        <section id="proyectos">
+            <h2>Proyectos Destacados</h2>
+            <div class="proyecto-grid">
+
+                <div class="card proyecto-card">
+                    <h3>E-commerce Platform API & Dashboard</h3>
+                    <p>Una solución full-stack para una tienda en línea, con una API robusta para gestionar productos y un panel de administración para visualizar ventas e inventario.</p>
+                    <p class="stack-tecnologico">Stack: Python, Flask, React.js, DocumentDB, AWS, JWT</p>
+                    <a href="[Enlace a tu GitHub]" target="_blank" class="btn">Ver Código</a>
+                </div>
+
+                <div class="card proyecto-card">
+                    <h3>Task Management App (Clon de Trello)</h3>
+                    <p>Aplicación web que permite a los usuarios gestionar proyectos y tareas en tableros interactivos, con funcionalidad de "arrastrar y soltar".</p>
+                    <p class="stack-tecnologico">Stack: Python, Django, React.js, DocumentDB, AWS, Docker</p>
+                    <a href="[Enlace a tu GitHub]" target="_blank" class="btn">Ver Código</a>
+                </div>
+                
+                </div>
+        </section> -->
+
+        <section id="habilidades">
+            <h2>Habilidades Técnicas</h2>
+            <div class="habilidades-grid">
+                <span class="habilidad-item">Python</span>
+                <span class="habilidad-item">JavaScript</span>
+                <span class="habilidad-item">React.js</span>
+                <span class="habilidad-item">Flask</span>
+                <span class="habilidad-item">HTML5 & CSS3</span>
+                <span class="habilidad-item">Amazon Web Services (AWS)</span>
+                <span class="habilidad-item">Amazon DocumentDB</span>
+                <span class="habilidad-item">MongoDB</span>
+                <span class="habilidad-item">Git & GitHub</span>
+                <span class="habilidad-item">Docker</span>
+                <span class="habilidad-item">API REST</span>
+            </div>
+        </section>
+
+        <section id="sobre-mi">
+             <h2>Sobre Mí</h2>
+             <p>Soy un desarrollador de software con experiencia en la creación de aplicaciones web completas. Mi experiencia en "nuevosmedios" me permitió trabajar con tecnologías en la nube como AWS y bases de datos NoSQL, dándome una perspectiva integral del ciclo de vida del desarrollo.</p>
+             <p>Me considero una persona proactiva, resolutiva y siempre dispuesta a aprender nuevas tecnologías para enfrentar desafíos complejos. Estoy buscando una oportunidad donde pueda aplicar mis habilidades y contribuir al desarrollo de productos innovadores.</p>
+        </section>
+
+
+        <section id="contacto">
+            <h2>Hablemos</h2>
+            <p>¿Tienes un proyecto en mente o una oportunidad que se alinee con mi perfil? <br> No dudes en contactarme.</p>
+            <div class="enlaces-contacto">
+                <p><strong>carbalo087@gmail.com</strong></p>
+                <a href="www.linkedin.com/in/samuel-reyes-407108129" target="_blank">LinkedIn</a> &bull;
+                <a href="https://github.com/samuelcarbalo" target="_blank">GitHub</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 - Samuel Reyes </p>
+    </footer>
+
+</body>
+</html>
